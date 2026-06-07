@@ -52,6 +52,9 @@ const panchangObj =
         const day = document.createElement("div");
 
         day.className = "day";
+        if (festivalObj) {
+  day.classList.add("festival-day");
+        }
 
         day.innerHTML = `
           <div class="date">${dayNum}</div>
