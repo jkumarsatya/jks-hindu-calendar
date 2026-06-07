@@ -155,9 +155,7 @@ document.getElementById("todayBtn")
 
   loadCalendar();
 });
-.today{
-  border:2px solid #ff9800;
-}
+.
 document
 .getElementById("closePopup")
 .addEventListener("click", () => {
