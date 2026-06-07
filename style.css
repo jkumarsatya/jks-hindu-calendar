@@ -2,7 +2,7 @@ body{
 font-family:sans-serif;
 margin:0;
 padding:16px;
-background:#fafafa;
+background:#f5f5f5;
 }
 
 header{
@@ -12,29 +12,36 @@ text-align:center;
 .calendar{
 display:grid;
 grid-template-columns:repeat(7,1fr);
-gap:8px;
+gap:6px;
+margin-top:20px;
 }
 
 .day{
-border:1px solid #ccc;
-border-radius:10px;
-padding:8px;
 background:white;
-min-height:120px;
+border:1px solid #ddd;
+border-radius:8px;
+padding:6px;
+min-height:90px;
 }
 
 .date{
-font-size:24px;
+font-size:20px;
 font-weight:bold;
 }
 
 .tithi{
-font-size:12px;
+font-size:10px;
 }
 
 .monthname{
-font-size:12px;
-color:#666;
+font-size:10px;
+color:gray;
+}
+
+.festival{
+font-size:10px;
+color:#d35400;
+}color:#666;
 }
 
 .festival{
