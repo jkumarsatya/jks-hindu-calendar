@@ -11,9 +11,11 @@ const monthNames = [
 
 function loadCalendar() {
 
-  fetch("festivals.json")
-    .then(response => response.json())
-    .then(festivals => {
+  Promise.all([
+  fetch("festivals.json").then(r => r.json()),
+  fetch("panchang.json").then(r => r.json())
+])
+.then(([festivals, panchang]) => {
 
       monthTitle.textContent =
         `${monthNames[currentMonth]} ${currentYear}`;
