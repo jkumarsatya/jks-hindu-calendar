@@ -43,3 +43,14 @@ header {
   font-size: 10px;
   color: #d35400;
 }
+.weekdays{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  margin-bottom:8px;
+  font-weight:bold;
+  text-align:center;
+}
+
+.weekdays div{
+  padding:6px;
+}
