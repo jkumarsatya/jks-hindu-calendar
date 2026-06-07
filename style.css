@@ -64,3 +64,14 @@ header {
 .weekdays div {
   padding: 4px;
 }
+.date {
+  color: white;
+}
+
+.tithi {
+  color: #ddd;
+}
+
+.monthname {
+  color: #aaa;
+}
