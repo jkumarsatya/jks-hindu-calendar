@@ -60,6 +60,16 @@ function loadCalendar() {
 
         day.className = "day";
 
+const today = new Date();
+
+if (
+  dayNum === today.getDate() &&
+  currentMonth === today.getMonth() &&
+  currentYear === today.getFullYear()
+) {
+  day.classList.add("today");
+}
+
         day.innerHTML = `
           <div class="date">${dayNum}</div>
           <div class="tithi">शु. तिथि</div>
@@ -107,3 +117,6 @@ document.getElementById("todayBtn")
 
   loadCalendar();
 });
+.today{
+  border:2px solid #ff9800;
+}
