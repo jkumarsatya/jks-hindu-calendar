@@ -17,16 +17,17 @@ header {
 }
 
 .day {
-  background: white;
-  border: 1px solid #ccc;
+  background: #111;
+  border: 1px solid #555;
   border-radius: 8px;
   padding: 6px;
-  min-height: 90px;
+  min-height: 120px;
   box-sizing: border-box;
+}
 }
 
 .date {
-  font-size: 20px;
+  font-size: 28px;
   font-weight: bold;
 }
 
@@ -51,6 +52,15 @@ header {
   text-align:center;
 }
 
-.weekdays div{
-  padding:6px;
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  margin-bottom: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.weekdays div {
+  padding: 4px;
 }
