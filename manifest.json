@@ -1,0 +1,8 @@
+{
+  "name":"JKS Hindu Calendar",
+  "short_name":"JKS",
+  "display":"standalone",
+  "start_url":"./",
+  "theme_color":"#ffffff",
+  "background_color":"#ffffff"
+}
