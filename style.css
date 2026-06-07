@@ -83,3 +83,17 @@ header {
   margin-top:4px;
   font-weight:bold;
 }
+.month-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.month-header button{
+  padding:8px 12px;
+  font-size:18px;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+}
