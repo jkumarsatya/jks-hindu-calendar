@@ -42,7 +42,8 @@ function loadCalendar() {
 
         const festivalObj =
           festivals.find(f => f.date === fullDate);
-
+const panchangObj =
+  panchang.find(p => p.date === fullDate);
         const festivalText =
           festivalObj
             ? `<div class="festival">🪔 ${festivalObj.festival}</div>`
@@ -54,8 +55,13 @@ function loadCalendar() {
 
         day.innerHTML = `
           <div class="date">${dayNum}</div>
-          <div class="tithi">शु. तिथि</div>
-          <div class="monthname">आषाढ़</div>
+          <div class="tithi">
+  ${panchangObj ? panchangObj.tithi : ""}
+</div>
+
+<div class="monthname">
+  ${panchangObj ? panchangObj.month : ""}
+</div>
           ${festivalText}
         `;
 
