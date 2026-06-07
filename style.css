@@ -1,50 +1,45 @@
-body{
-font-family:sans-serif;
-margin:0;
-padding:16px;
-background:#f5f5f5;
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 16px;
+  background: #f5f5f5;
 }
 
-header{
-text-align:center;
+header {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.calendar{
-display:grid;
-grid-template-columns:repeat(7,1fr);
-gap:6px;
-margin-top:20px;
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
 }
 
-.day{
-background:white;
-border:1px solid #ddd;
-border-radius:8px;
-padding:6px;
-min-height:90px;
+.day {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 6px;
+  min-height: 90px;
+  box-sizing: border-box;
 }
 
-.date{
-font-size:20px;
-font-weight:bold;
+.date {
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.tithi{
-font-size:10px;
+.tithi {
+  font-size: 10px;
 }
 
-.monthname{
-font-size:10px;
-color:gray;
+.monthname {
+  font-size: 10px;
+  color: #666;
 }
 
-.festival{
-font-size:10px;
-color:#d35400;
-}color:#666;
-}
-
-.festival{
-margin-top:6px;
-font-size:12px;
+.festival {
+  font-size: 10px;
+  color: #d35400;
 }
