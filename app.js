@@ -65,6 +65,10 @@ const panchangObj =
 <div class="monthname">
   ${panchangObj ? panchangObj.month : ""}
 </div>
+
+<div class="nakshatra">
+  ${panchangObj ? panchangObj.nakshatra : ""}
+</div>
           ${festivalText}
         `;
 
