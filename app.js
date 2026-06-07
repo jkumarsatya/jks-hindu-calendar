@@ -1,32 +1,49 @@
 const calendar = document.querySelector(".calendar");
 
 const year = 2026;
-const month = 5; // June (0=Jan)
+const month = 5; // June
 
-const firstDay = new Date(year, month, 1).getDay();
-const daysInMonth = new Date(year, month + 1, 0).getDate();
+fetch("festivals.json")
+  .then(response => response.json())
+  .then(festivals => {
 
-calendar.innerHTML = "";
+    const firstDay = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-// Empty cells before first day
-for (let i = 0; i < firstDay; i++) {
-  const empty = document.createElement("div");
-  empty.className = "day";
-  empty.style.visibility = "hidden";
-  calendar.appendChild(empty);
-}
+    calendar.innerHTML = "";
 
-// Actual dates
-for (let i = 1; i <= daysInMonth; i++) {
-  const day = document.createElement("div");
+    // Empty cells before first day
+    for (let i = 0; i < firstDay; i++) {
+      const empty = document.createElement("div");
+      empty.className = "day";
+      empty.style.visibility = "hidden";
+      calendar.appendChild(empty);
+    }
 
-  day.className = "day";
+    for (let dayNum = 1; dayNum <= daysInMonth; dayNum++) {
 
-  day.innerHTML = `
-    <div class="date">${i}</div>
-    <div class="tithi">शु. तिथि</div>
-    <div class="monthname">आषाढ़</div>
-  `;
+      const fullDate =
+        `${year}-${String(month + 1).padStart(2, "0")}-${String(dayNum).padStart(2, "0")}`;
 
-  calendar.appendChild(day);
-}
+      const festivalObj =
+        festivals.find(f => f.date === fullDate);
+
+      const festivalText =
+        festivalObj
+          ? `<div class="festival">🪔 ${festivalObj.festival}</div>`
+          : "";
+
+      const day = document.createElement("div");
+
+      day.className = "day";
+
+      day.innerHTML = `
+        <div class="date">${dayNum}</div>
+        <div class="tithi">शु. तिथि</div>
+        <div class="monthname">आषाढ़</div>
+        ${festivalText}
+      `;
+
+      calendar.appendChild(day);
+    }
+  });
