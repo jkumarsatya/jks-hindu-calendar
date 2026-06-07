@@ -50,7 +50,21 @@ function loadCalendar() {
 
         const festivalObj =
           festivals.find(f => f.date === fullDate);
+const panchangData = {
+  "2026-06-15": {
+    tithi: "पूर्णिमा",
+    month: "आषाढ़",
+    nakshatra: "हस्त",
+    festival: "गुरु पूर्णिमा"
+  },
 
+  "2026-06-26": {
+    tithi: "एकादशी",
+    month: "आषाढ़",
+    nakshatra: "श्रवण",
+    festival: "एकादशी"
+  }
+};
         const festivalText =
           festivalObj
             ? `<div class="festival">🪔 ${festivalObj.festival}</div>`
@@ -78,6 +92,30 @@ if (
         `;
 
         calendar.appendChild(day);
+        day.addEventListener("click", () => {
+
+  const data = panchangData[fullDate];
+
+  if (!data) return;
+
+  document.getElementById("popupDate").textContent =
+    fullDate;
+
+  document.getElementById("popupTithi").textContent =
+    data.tithi;
+
+  document.getElementById("popupMonth").textContent =
+    data.month;
+
+  document.getElementById("popupNakshatra").textContent =
+    data.nakshatra;
+
+  document.getElementById("popupFestival").textContent =
+    data.festival;
+
+  document.getElementById("popup").style.display =
+    "block";
+});
       }
     });
 }
@@ -120,3 +158,10 @@ document.getElementById("todayBtn")
 .today{
   border:2px solid #ff9800;
 }
+document
+.getElementById("closePopup")
+.addEventListener("click", () => {
+
+  document.getElementById("popup").style.display =
+    "none";
+});
