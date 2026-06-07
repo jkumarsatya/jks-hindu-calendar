@@ -1,3 +1,18 @@
+// DEBUG - remove later
+document.body.innerHTML = "<pre id='debug' style='font-size:11px;padding:10px'></pre>" + document.body.innerHTML;
+const dbg = t => { document.getElementById('debug').textContent += t + "\n"; };
+
+window.onerror = (msg, src, line) => dbg("ERROR: " + msg + " line:" + line);
+
+fetch("panchang.json")
+  .then(r => { dbg("panchang status: " + r.status); return r.json(); })
+  .then(d => dbg("panchang entries: " + d.length))
+  .catch(e => dbg("panchang FAILED: " + e));
+
+fetch("festivals.json")
+  .then(r => { dbg("festivals status: " + r.status); return r.json(); })
+  .then(d => dbg("festivals entries: " + d.length))
+  .catch(e => dbg("festivals FAILED: " + e));
 const calendar = document.querySelector(".calendar");
 const monthTitle = document.getElementById("monthTitle");
 
