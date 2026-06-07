@@ -97,3 +97,13 @@ document.getElementById("next").addEventListener("click", () => {
 });
 
 loadCalendar();
+document.getElementById("todayBtn")
+.addEventListener("click", () => {
+
+  const today = new Date();
+
+  currentYear = today.getFullYear();
+  currentMonth = today.getMonth();
+
+  loadCalendar();
+});
